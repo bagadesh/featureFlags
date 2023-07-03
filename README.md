@@ -66,3 +66,9 @@ writer.changeVariableValue(
 
 Here for example ```json_array``` should be retried using ```List<T>```
 
+## how to update json data
+
+While initialising the SDK we can pass optional parameter ```cachedFileName```. SDK will look for the this file in the cache & try to use on every initialization.
+
+Currently, it will be the responsitbility of SDK user to retrive their latest data and push it to the given file name.
+
