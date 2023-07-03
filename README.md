@@ -65,7 +65,7 @@ writer.changeVariableValue(
 ```
 
 ## Supported variable types
-``` "string", "integer", "double", "float", "json_array", "json_object", "" ```
+``` "string", "integer", "double", "float", "json_array", "json_object" ```
 
 Here for example ```json_array``` should be retried using ```List<T>```
 
