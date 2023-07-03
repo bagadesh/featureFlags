@@ -3,6 +3,10 @@ A config system to get and update feature flags
 
 Since most the config system we use ties us to pay for things we are not using. So this config system helps us to use our existing system to provide us the required data and use that.
 
+# Screenshots
+
+![Screenshot_20230703-104942](https://github.com/bagadesh/featureFlags/assets/48888901/047e3a69-5359-46de-b7ef-944a14e30955)
+![Screenshot_20230703-104936](https://github.com/bagadesh/featureFlags/assets/48888901/a1cd0b83-e0f4-404b-b190-f8ebbbe86b25)
 
 # How it works
 ## how to initialize the SDK
@@ -11,6 +15,7 @@ FeatureFlagSdkImpl.init(
    context = applicationContext,
    defaultConfigResource = R.raw.feature_flag,
 )
+
 ```
 ## how to get & use the reader
 ```Kotlin
