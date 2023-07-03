@@ -6,5 +6,6 @@ package com.bagadesh.core.entity
 data class Feature(
     val key: String,
     val isEnabled: Boolean,
+    val description: String = "",
     val variableList: List<Variable>
 )

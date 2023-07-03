@@ -12,5 +12,6 @@ data class AppFeature(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val key: String,
     val isEnabled: Boolean,
+    val description: String = "",
     val source: Int
 )

@@ -120,6 +120,7 @@ internal fun FeatureFlagScreen(
                     .clickable { onClick(feature) },
                 name = feature.key,
                 isEnabled = feature.isEnabled,
+                description = feature.description,
                 onChange = {
                     onChange(feature.key, it)
                 }
@@ -143,7 +144,8 @@ internal fun FeatureFlagScreenPreview() {
                             repeat(5) { variableId ->
                                 uiVariables.add(UiVariable(key = "Variable $variableId", value = "Value $variableId", "string"))
                             }
-                        }
+                        },
+                        description = "This particular feature flag is useful to enable the V2 version of the API"
                     )
                 )
             }

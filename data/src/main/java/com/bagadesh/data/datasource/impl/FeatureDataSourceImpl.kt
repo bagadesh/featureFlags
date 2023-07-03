@@ -53,7 +53,8 @@ class FeatureDataSourceImpl(
                                     value = variable.value,
                                     valueType = variable.valueType
                                 )
-                            }
+                            },
+                        description = feature.description
                     )
                 }
                 if (!isInitialized.getAndSet(true) && !initializedJob.isCompleted) {
@@ -117,7 +118,7 @@ class FeatureDataSourceImpl(
     }
 
     override suspend fun insertFeatureFlags(data: List<DataFeature>, source: Source) {
-        val features = data.map { AppFeature(key = it.key, isEnabled = it.isEnabled, source = source.value) }
+        val features = data.map { AppFeature(key = it.key, isEnabled = it.isEnabled, description = it.description, source = source.value) }
         val allVariables = data.flatMap { feature ->
             feature.variableList.map { variable -> AppVariable(featureKey = feature.key, key = variable.key, value = variable.value, valueType = variable.valueType, source = source.value) }
         }
@@ -160,8 +161,8 @@ class FeatureDataSourceImpl(
         featureDao.insertAll(newFeatures)
         updateFeatures.forEach {
             val query = SimpleSQLiteQuery(
-                query = "UPDATE app_feature SET isEnabled = ? WHERE key = ? AND source <= ?",
-                bindArgs = arrayOf(it.isEnabled, it.key, it.source)
+                query = "UPDATE app_feature SET isEnabled = ?, description = ? WHERE key = ? AND source <= ?",
+                bindArgs = arrayOf(it.isEnabled, it.description, it.key, it.source)
             )
             featureDao.updateRawQuery(query = query)
         }

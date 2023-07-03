@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.sp
 internal fun FeatureUi(
     modifier: Modifier = Modifier,
     name: String,
-    description: String = "This particular feature flag is useful to enable the V2 version of the API",
+    description: String = "",
     isEnabled: Boolean,
     onChange: (Boolean) -> Unit
 ) {

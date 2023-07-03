@@ -4,6 +4,7 @@
     "featureConfigs": {
         "appOverride": {
             "enabled": true,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
             "variables": {
                 "test": {
                     "value": "something",
@@ -13,6 +14,7 @@
         },
         "lastToFirst": {
             "enabled": true,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
             "variables": {
                 "test": {
                     "value": "something",
@@ -22,6 +24,7 @@
         },
         "showInGrid": {
             "enabled": false,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
             "variables": {
                 "test": {
                     "value": "something",
@@ -31,7 +34,7 @@
         },
         "testVariables": {
             "enabled": false,
-            "description": "This is description that is long for testing it but still it is not long so I will be keep on writing it until I'm satisfied",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
             "variables": {
                 "test": {
                     "value": "something",
@@ -67,6 +70,7 @@
         },
         "showInGrid1": {
             "enabled": false,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
             "variables": {
                 "test": {
                     "value": "something",
@@ -76,6 +80,7 @@
         },
         "showInGrid2": {
             "enabled": false,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
             "variables": {
                 "test": {
                     "value": "something",
@@ -85,6 +90,7 @@
         },
         "showInGrid3": {
             "enabled": false,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
             "variables": {
                 "test": {
                     "value": "something",
@@ -94,6 +100,7 @@
         },
         "showInGrid4": {
             "enabled": false,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
             "variables": {
                 "test": {
                     "value": "something",
@@ -103,6 +110,7 @@
         },
         "showInGrid5": {
             "enabled": false,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
             "variables": {
                 "test": {
                     "value": "something",
@@ -112,6 +120,7 @@
         },
         "showInGrid6": {
             "enabled": false,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
             "variables": {
                 "test": {
                     "value": "something",
@@ -121,6 +130,7 @@
         },
         "showInGrid7": {
             "enabled": false,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
             "variables": {
                 "test": {
                     "value": "something",
@@ -130,6 +140,7 @@
         },
         "showInGrid8": {
             "enabled": false,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
             "variables": {
                 "test": {
                     "value": "something",
@@ -139,6 +150,7 @@
         },
         "showInGrid11": {
             "enabled": false,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
             "variables": {
                 "test": {
                     "value": "something",
@@ -148,6 +160,7 @@
         },
         "showInGrid22": {
             "enabled": false,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
             "variables": {
                 "test": {
                     "value": "something",
@@ -157,6 +170,7 @@
         },
         "showInGrid33": {
             "enabled": false,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
             "variables": {
                 "test": {
                     "value": "something",
@@ -166,6 +180,7 @@
         },
         "showInGrid44": {
             "enabled": false,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
             "variables": {
                 "test": {
                     "value": "something",
@@ -175,6 +190,7 @@
         },
         "showInGrid55": {
             "enabled": false,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
             "variables": {
                 "test": {
                     "value": "something",
@@ -184,6 +200,7 @@
         },
         "showInGrid66": {
             "enabled": false,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
             "variables": {
                 "test": {
                     "value": "something",
@@ -193,6 +210,7 @@
         },
         "showInGrid77": {
             "enabled": false,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
             "variables": {
                 "test": {
                     "value": "something",
@@ -202,6 +220,7 @@
         },
         "showInGrid88": {
             "enabled": false,
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
             "variables": {
                 "test": {
                     "value": "something",

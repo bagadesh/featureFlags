@@ -10,7 +10,7 @@ import com.bagadesh.ui.entity.UiVariable
  */
 
 fun Feature.toUi(): UiFeature {
-    return UiFeature(key = key, isEnabled = isEnabled, variables = variableList.map { it.toUi() })
+    return UiFeature(key = key, isEnabled = isEnabled, variables = variableList.map { it.toUi() }, description = description)
 }
 
 

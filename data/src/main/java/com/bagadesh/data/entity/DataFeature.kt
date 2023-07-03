@@ -6,5 +6,6 @@ package com.bagadesh.data.entity
 data class DataFeature (
     val key: String,
     val isEnabled: Boolean,
+    val description: String = "",
     val variableList: List<DataVariable>
 )

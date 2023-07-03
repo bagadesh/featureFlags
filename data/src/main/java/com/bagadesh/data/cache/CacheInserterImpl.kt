@@ -60,6 +60,7 @@ class CacheInserterImpl constructor(
             Feature(
                 key = it.key,
                 isEnabled = enabled,
+                description = description,
                 variableList = variables.map { variable ->
                     val valueDetail = variable.value
                     val value = valueDetail[VALUE].toString()

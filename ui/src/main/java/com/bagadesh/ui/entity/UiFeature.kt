@@ -9,5 +9,6 @@ import androidx.compose.runtime.Stable
 data class UiFeature(
     val key: String,
     val isEnabled: Boolean,
+    val description: String,
     val variables: List<UiVariable>
 )

@@ -13,6 +13,7 @@ fun DataFeature.toDomain(): Feature {
     return Feature(
         key = key,
         isEnabled = isEnabled,
+        description = description,
         variableList = variableList.map { it.toDomain() }
     )
 }
@@ -29,6 +30,7 @@ fun Feature.toData(): DataFeature {
     return DataFeature(
         key = key,
         isEnabled = isEnabled,
+        description = description,
         variableList = variableList.map { it.toData() }
     )
 }
