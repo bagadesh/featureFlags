@@ -1,0 +1,213 @@
+{
+    "someRandomStringKey": "someRandomStringValue",
+    "someRandomIntKey": 1,
+    "featureConfigs": {
+        "appOverride": {
+            "enabled": true,
+            "variables": {
+                "test": {
+                    "value": "something",
+                    "value_type": "string"
+                }
+            }
+        },
+        "lastToFirst": {
+            "enabled": true,
+            "variables": {
+                "test": {
+                    "value": "something",
+                    "value_type": "string"
+                }
+            }
+        },
+        "showInGrid": {
+            "enabled": false,
+            "variables": {
+                "test": {
+                    "value": "something",
+                    "value_type": "string"
+                }
+            }
+        },
+        "testVariables": {
+            "enabled": false,
+            "description": "This is description that is long for testing it but still it is not long so I will be keep on writing it until I'm satisfied",
+            "variables": {
+                "test": {
+                    "value": "something",
+                    "value_type": "string"
+                },
+                "int1": {
+                    "value": 123,
+                    "value_type": "integer"
+                },
+                "double1": {
+                    "value": 11.12,
+                    "value_type": "double"
+                },
+                "checked": {
+                    "value": true,
+                    "value_type": "boolean"
+                },
+                "jsonArray": {
+                    "value": [
+                        "name",
+                        "baga"
+                    ],
+                    "value_type": "json_array"
+                },
+                "jsonObject": {
+                    "value": {
+                        "name": "name",
+                        "value": "bagadesh"
+                    },
+                    "value_type": "json_object"
+                }
+            }
+        },
+        "showInGrid1": {
+            "enabled": false,
+            "variables": {
+                "test": {
+                    "value": "something",
+                    "value_type": "string"
+                }
+            }
+        },
+        "showInGrid2": {
+            "enabled": false,
+            "variables": {
+                "test": {
+                    "value": "something",
+                    "value_type": "string"
+                }
+            }
+        },
+        "showInGrid3": {
+            "enabled": false,
+            "variables": {
+                "test": {
+                    "value": "something",
+                    "value_type": "string"
+                }
+            }
+        },
+        "showInGrid4": {
+            "enabled": false,
+            "variables": {
+                "test": {
+                    "value": "something",
+                    "value_type": "string"
+                }
+            }
+        },
+        "showInGrid5": {
+            "enabled": false,
+            "variables": {
+                "test": {
+                    "value": "something",
+                    "value_type": "string"
+                }
+            }
+        },
+        "showInGrid6": {
+            "enabled": false,
+            "variables": {
+                "test": {
+                    "value": "something",
+                    "value_type": "string"
+                }
+            }
+        },
+        "showInGrid7": {
+            "enabled": false,
+            "variables": {
+                "test": {
+                    "value": "something",
+                    "value_type": "string"
+                }
+            }
+        },
+        "showInGrid8": {
+            "enabled": false,
+            "variables": {
+                "test": {
+                    "value": "something",
+                    "value_type": "string"
+                }
+            }
+        },
+        "showInGrid11": {
+            "enabled": false,
+            "variables": {
+                "test": {
+                    "value": "something",
+                    "value_type": "string"
+                }
+            }
+        },
+        "showInGrid22": {
+            "enabled": false,
+            "variables": {
+                "test": {
+                    "value": "something",
+                    "value_type": "string"
+                }
+            }
+        },
+        "showInGrid33": {
+            "enabled": false,
+            "variables": {
+                "test": {
+                    "value": "something",
+                    "value_type": "string"
+                }
+            }
+        },
+        "showInGrid44": {
+            "enabled": false,
+            "variables": {
+                "test": {
+                    "value": "something",
+                    "value_type": "string"
+                }
+            }
+        },
+        "showInGrid55": {
+            "enabled": false,
+            "variables": {
+                "test": {
+                    "value": "something",
+                    "value_type": "string"
+                }
+            }
+        },
+        "showInGrid66": {
+            "enabled": false,
+            "variables": {
+                "test": {
+                    "value": "something",
+                    "value_type": "string"
+                }
+            }
+        },
+        "showInGrid77": {
+            "enabled": false,
+            "variables": {
+                "test": {
+                    "value": "something",
+                    "value_type": "string"
+                }
+            }
+        },
+        "showInGrid88": {
+            "enabled": false,
+            "variables": {
+                "test": {
+                    "value": "something",
+                    "value_type": "string"
+                }
+            }
+        }
+    }
+}
