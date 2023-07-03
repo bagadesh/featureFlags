@@ -49,8 +49,6 @@ writer.changeVariableValue(
 
 ```JSON
 {
-    "someRandomStringKey": "someRandomStringValue",
-    "someRandomIntKey": 1,
     "featureConfigs": {
         "appOverride": {
             "enabled": true,
