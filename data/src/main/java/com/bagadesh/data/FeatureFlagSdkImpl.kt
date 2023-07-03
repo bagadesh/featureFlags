@@ -9,6 +9,7 @@ import com.bagadesh.core.contract.impl.ReaderImpl
 import com.bagadesh.core.contract.impl.WriterImpl
 import com.bagadesh.core.repository.ConverterRepository
 import com.bagadesh.core.repository.FeatureRepository
+import com.bagadesh.core.repository.VariableCheckerRepository
 import com.bagadesh.core.usecases.AddFeatureFlagsUseCase
 import com.bagadesh.core.usecases.ChangeVariableUseCase
 import com.bagadesh.core.usecases.EnableFeatureUseCase
@@ -39,17 +40,17 @@ object FeatureFlagSdkImpl : FeatureFlagSdk {
     private val scope = CoroutineScope(SupervisorJob())
     private val featuresDao by lazy { db.featureDao() }
     private val variablesDao by lazy { db.variableDao() }
-    private val variableCheckerRepository by lazy { VariableCheckerRepositoryImpl(gson = gson) }
+    private val variableCheckerRepository: VariableCheckerRepository by lazy { VariableCheckerRepositoryImpl(gson = gson) }
     private val featuresDataSource: FeaturesDataSource by lazy { FeatureDataSourceImpl(scope = scope, featureDao = featuresDao, variableDao = variablesDao) }
     private val featureRepository: FeatureRepository by lazy { FeatureRepositoryImpl(featuresDataSource = featuresDataSource, variableCheckerRepository = variableCheckerRepository) }
     private val converterRepository: ConverterRepository by lazy { ConverterRepositoryImpl(gson = gson) }
-    private val getFeaturesUseCase: GetFeatureFlagsUseCase by lazy { GetFeatureFlagsUseCase(repository = featureRepository) }
-    private val typeConverterUseCase: TypeConverterUseCase by lazy { TypeConverterUseCase(converterRepository = converterRepository) }
-    private val enableFeatureUseCase: EnableFeatureUseCase by lazy { EnableFeatureUseCase(repository = featureRepository) }
-    private val changeVariableUseCase: ChangeVariableUseCase by lazy { ChangeVariableUseCase(repository = featureRepository) }
-    private val addFeatureFlagsUseCase: AddFeatureFlagsUseCase by lazy { AddFeatureFlagsUseCase(repository = featureRepository) }
-    private val isFeatureEnabledUseCase: IsFeatureEnabledUseCase by lazy { IsFeatureEnabledUseCase(repository = featureRepository) }
-    private val getVariableValueUseCase: GetVariableValueUseCase by lazy { GetVariableValueUseCase(repository = featureRepository) }
+    private val getFeaturesUseCase by lazy { GetFeatureFlagsUseCase(repository = featureRepository) }
+    private val typeConverterUseCase by lazy { TypeConverterUseCase(converterRepository = converterRepository) }
+    private val enableFeatureUseCase by lazy { EnableFeatureUseCase(repository = featureRepository) }
+    private val changeVariableUseCase by lazy { ChangeVariableUseCase(repository = featureRepository) }
+    private val addFeatureFlagsUseCase by lazy { AddFeatureFlagsUseCase(repository = featureRepository) }
+    private val isFeatureEnabledUseCase by lazy { IsFeatureEnabledUseCase(repository = featureRepository) }
+    private val getVariableValueUseCase by lazy { GetVariableValueUseCase(repository = featureRepository) }
     private val _reader: Reader by lazy {
         ReaderImpl(
             getFeatureFlagsUseCase = getFeaturesUseCase,
