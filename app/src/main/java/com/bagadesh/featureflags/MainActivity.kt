@@ -29,11 +29,11 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.bagadesh.data.FeatureFlagSdkImpl
+import com.featureflags.data.FeatureFlagSdkImpl
 import com.bagadesh.featureflags.FeatureFlagTester.TestState.*
 import com.bagadesh.featureflags.ui.theme.FeatureFlagsTheme
-import com.bagadesh.ui.screen.FeatureFlagScreenUi
-import com.bagadesh.ui.vm.FeatureFlagViewModel
+import com.featureflags.ui.screen.FeatureFlagScreenUi
+import com.featureflags.ui.vm.FeatureFlagViewModel
 
 class MainActivity : ComponentActivity() {
 
@@ -43,7 +43,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         FeatureFlagSdkImpl.init(
             applicationContext,
-            defaultConfigResource = com.bagadesh.ui.R.raw.feature_flag,
+            defaultConfigResource = com.featureflags.ui.R.raw.feature_flag,
         )
         val vm = FeatureFlagViewModel(reader = FeatureFlagSdkImpl.getReader(), writer = FeatureFlagSdkImpl.getWriter())
         featureFlagTester = FeatureFlagTester()

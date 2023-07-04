@@ -1,4 +1,4 @@
-package com.bagadesh.ui
+package com.featureflags.ui
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.bagadesh.ui.test", appContext.packageName)
+        assertEquals("com.featureflags.ui.test", appContext.packageName)
     }
 }

@@ -1,9 +1,9 @@
 package com.bagadesh.featureflags
 
 import android.util.Log
-import com.bagadesh.core.entity.Source
-import com.bagadesh.core.request.ChangeVariableRequest
-import com.bagadesh.data.FeatureFlagSdkImpl
+import com.featureflags.core.entity.Source
+import com.featureflags.core.request.ChangeVariableRequest
+import com.featureflags.data.FeatureFlagSdkImpl
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.FlowCollector
@@ -35,7 +35,7 @@ class FeatureFlagTester {
             emit(TestState.Loading("Testing isFeatureEnabled method"))
             delay(500)
             val received1 = reader.isFeatureEnabled(key = sampleFeatureName)
-            writer.enableFeature(key = sampleFeatureName, enabled = !received1, source = Source.USER)
+            writer.enableFeature(key = sampleFeatureName, enabled = !received1, source = com.featureflags.core.entity.Source.USER)
             val received2 = reader.isFeatureEnabled(key = sampleFeatureName)
 
             if (received1 == received2) {
@@ -63,7 +63,7 @@ class FeatureFlagTester {
                 changedValue = changedValue,
                 valueType = "string",
             ),
-            source = Source.USER
+            source = com.featureflags.core.entity.Source.USER
         )
         val received2 = reader.getVariableValue(featureKey = sampleFeatureName, key = variableKey, default = { "default" }, String::class)
         Log.d("FeatureFlagTester", "received1 = $received1, received2 = $received2")

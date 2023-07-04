@@ -1,4 +1,4 @@
-package com.bagadesh.ui
+package com.featureflags.ui
 
 import org.junit.Test
 

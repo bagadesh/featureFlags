@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.bagadesh.data"
+    namespace = "com.featureflags.data"
     compileSdk = 33
 
     defaultConfig {
