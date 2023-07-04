@@ -52,14 +52,14 @@ val sourcesJar by tasks.registering(Jar::class) {
     from(android.sourceSets.getByName("main").java.srcDirs)
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            register<MavenPublication>("release") {
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            artifactId = "data"
+            groupId = "com.github.bagadesh.featureFlags"
+            version = "1.0.0-beta03"
+            afterEvaluate {
                 from(components["release"])
-                artifactId = "data"
-                groupId = "com.github.bagadesh.featureFlags"
-                version = "1.0.0-beta03"
             }
         }
     }

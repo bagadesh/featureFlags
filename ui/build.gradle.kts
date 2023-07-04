@@ -72,14 +72,14 @@ dependencies {
     debugImplementation(libs.ui.test.manifest)
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            val release by publications.registering(MavenPublication::class) {
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            artifactId = "ui"
+            groupId = "com.github.bagadesh.featureFlags"
+            version = "1.0.0-beta03"
+            afterEvaluate {
                 from(components["release"])
-                artifactId = "ui"
-                groupId = "com.github.bagadesh.featureFlags"
-                version = "1.0.0-beta03"
             }
         }
     }

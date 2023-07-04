@@ -34,12 +34,12 @@ val sourcesJar by tasks.registering(Jar::class) {
     archiveClassifier.set("sources")
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            register("mavenJava", MavenPublication::class.java) {
+publishing {
+    publications {
+        register("mavenJava", MavenPublication::class.java) {
+            artifact(sourcesJar.get())
+            afterEvaluate {
                 from(components["java"])
-                artifact(sourcesJar.get())
             }
         }
     }
