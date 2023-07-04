@@ -55,9 +55,8 @@ val sourcesJar by tasks.registering(Jar::class) {
 afterEvaluate {
     publishing {
         publications {
-            val release by publications.registering(MavenPublication::class) {
+            register<MavenPublication>("release") {
                 from(components["release"])
-                artifact(sourcesJar.get())
                 artifactId = "data"
                 groupId = "com.github.bagadesh.featureFlags"
                 version = "1.0.0-beta03"

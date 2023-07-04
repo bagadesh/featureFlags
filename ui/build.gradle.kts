@@ -71,17 +71,12 @@ dependencies {
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
 }
-val sourcesJar by tasks.registering(Jar::class) {
-    archiveClassifier.set("sources")
-    from(android.sourceSets.getByName("main").java.srcDirs)
-}
 
 afterEvaluate {
     publishing {
         publications {
             val release by publications.registering(MavenPublication::class) {
                 from(components["release"])
-                artifact(sourcesJar.get())
                 artifactId = "ui"
                 groupId = "com.github.bagadesh.featureFlags"
                 version = "1.0.0-beta03"
