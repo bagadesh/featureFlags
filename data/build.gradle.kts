@@ -29,7 +29,11 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
     publishing {
         singleVariant("release") {
             withSourcesJar()
@@ -47,10 +51,18 @@ dependencies {
     implementation(libs.room.ktx)
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            register<MavenPublication>("release") {
+val sourcesJar by tasks.registering(Jar::class) {
+    archiveClassifier.set("sources")
+    from(android.sourceSets.getByName("main").java.srcDirs)
+}
+
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            artifactId = "data"
+            groupId = "com.github.bagadesh.featureFlags"
+            version = "1.0.0-beta03"
+            afterEvaluate {
                 from(components["release"])
             }
         }

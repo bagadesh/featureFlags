@@ -10,7 +10,6 @@ android {
 
     defaultConfig {
         minSdk = 24
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
@@ -73,10 +72,13 @@ dependencies {
     debugImplementation(libs.ui.test.manifest)
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            register<MavenPublication>("release") {
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            artifactId = "ui"
+            groupId = "com.github.bagadesh.featureFlags"
+            version = "1.0.0-beta03"
+            afterEvaluate {
                 from(components["release"])
             }
         }

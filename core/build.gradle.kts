@@ -30,10 +30,15 @@ dependencies {
     implementation(libs.kotlinx.coroutines.core)
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            register("mavenJava", MavenPublication::class.java) {
+val sourcesJar by tasks.registering(Jar::class) {
+    archiveClassifier.set("sources")
+}
+
+publishing {
+    publications {
+        register("mavenJava", MavenPublication::class.java) {
+            artifact(sourcesJar.get())
+            afterEvaluate {
                 from(components["java"])
             }
         }
