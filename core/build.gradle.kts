@@ -2,6 +2,7 @@ plugins {
     id("java-library")
     alias(libs.plugins.org.jetbrains.kotlin.jvm)
     id("kotlin")
+    id("maven-publish")
 }
 
 
@@ -9,6 +10,7 @@ plugins {
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
+
 
 }
 
@@ -26,4 +28,14 @@ kotlin {
 
 dependencies {
     implementation(libs.kotlinx.coroutines.core)
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            register("mavenJava", MavenPublication::class.java) {
+                from(components["java"])
+            }
+        }
+    }
 }

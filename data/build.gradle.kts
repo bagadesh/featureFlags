@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.com.android.library)
     alias(libs.plugins.org.jetbrains.kotlin.android)
     id("com.google.devtools.ksp")
+    id("maven-publish")
 }
 
 android {
@@ -28,6 +29,13 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
 }
 
 dependencies {
@@ -37,4 +45,14 @@ dependencies {
     ksp(libs.room.compiler)
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            register<MavenPublication>("release") {
+                from(components["release"])
+            }
+        }
+    }
 }

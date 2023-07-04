@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.com.android.library)
     alias(libs.plugins.org.jetbrains.kotlin.android)
+    id("maven-publish")
 }
 
 android {
@@ -38,6 +39,12 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
 }
 
 kotlin {
@@ -64,4 +71,14 @@ dependencies {
     androidTestImplementation(libs.ui.test.junit4)
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            register<MavenPublication>("release") {
+                from(components["release"])
+            }
+        }
+    }
 }
