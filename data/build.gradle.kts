@@ -47,11 +47,20 @@ dependencies {
     implementation(libs.room.ktx)
 }
 
+val sourcesJar by tasks.registering(Jar::class) {
+    archiveClassifier.set("sources")
+    from(android.sourceSets.getByName("main").java.srcDirs)
+}
+
 afterEvaluate {
     publishing {
         publications {
-            register<MavenPublication>("release") {
+            val release by publications.registering(MavenPublication::class) {
                 from(components["release"])
+                artifact(sourcesJar.get())
+                artifactId = "data"
+                groupId = "com.github.bagadesh.featureFlags"
+                version = "1.0.0-beta03"
             }
         }
     }
