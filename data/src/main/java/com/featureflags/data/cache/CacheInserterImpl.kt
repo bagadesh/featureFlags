@@ -19,6 +19,7 @@ import java.io.File
 class CacheInserterImpl constructor(
     private val gson: Gson,
     private val cachedFileName: String,
+    private val cacheDirectory: String,
     private val resources: Resources,
     private val bundleConfigResource: Int,
     private val addFeatureFlagsUseCase: AddFeatureFlagsUseCase,
@@ -39,12 +40,12 @@ class CacheInserterImpl constructor(
         val gsonResult = gson.fromJson<Map<String, Any>>(packedConfig, object : TypeToken<Map<String, Any>>() {}.type)
         val featureResult = (gsonResult[FEATURE_FLAG_CONFIG] as Map<String, Map<String, Any>>).toFeatureList()
         scope.launch {
-            addFeatureFlagsUseCase.insert(data = featureResult, source = com.featureflags.core.entity.Source.CONFIG)
+            addFeatureFlagsUseCase.insert(data = featureResult, source = Source.CONFIG)
         }
     }
 
     private fun getSavedJson(): String {
-        val cachedFile = File(cachedFileName)
+        val cachedFile = File("$cacheDirectory/$cachedFileName")
         return if (cachedFile.exists()) {
             cachedFile.bufferedReader().use { it.readText() }
         } else {
@@ -52,12 +53,12 @@ class CacheInserterImpl constructor(
         }
     }
 
-    private fun Map<String, Map<String, Any>>.toFeatureList(): List<com.featureflags.core.entity.Feature> {
+    private fun Map<String, Map<String, Any>>.toFeatureList(): List<Feature> {
         return map {
             val enabled = it.value[ENABLED] as Boolean
             val description = it.value[DESCRIPTION] as? String ?: ""
             val variables = it.value[VARIABLES] as Map<String, Map<String, Any>>
-            com.featureflags.core.entity.Feature(
+            Feature(
                 key = it.key,
                 isEnabled = enabled,
                 description = description,
@@ -65,7 +66,7 @@ class CacheInserterImpl constructor(
                     val valueDetail = variable.value
                     val value = valueDetail[VALUE].toString()
                     val valueType = valueDetail[VALUE_TYPE] as String
-                    com.featureflags.core.entity.Variable(
+                    Variable(
                         key = variable.key,
                         value = value,
                         valueType = valueType
