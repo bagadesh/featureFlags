@@ -25,7 +25,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavBackStackEntry
@@ -43,15 +42,6 @@ import kotlin.random.Random
  * Created by bagadesh on 26/06/23.
  */
 
-val enterTransition: (AnimatedContentTransitionScope<NavBackStackEntry>.() -> EnterTransition?)?
-    get() = {
-        slideInHorizontally(animationSpec = tween(500), initialOffsetX = { it })
-    }
-
-val exitTransition: (AnimatedContentTransitionScope<NavBackStackEntry>.() -> ExitTransition?)?
-    get() = {
-        slideOutHorizontally(animationSpec = tween(500), targetOffsetX = { it })
-    }
 
 @Composable
 fun FeatureFlagScreenUi(viewModel: FeatureFlagViewModel) {
@@ -128,6 +118,16 @@ internal fun FeatureFlagScreen(
         }
     }
 }
+
+internal val enterTransition: (AnimatedContentTransitionScope<NavBackStackEntry>.() -> EnterTransition?)?
+    get() = {
+        slideInHorizontally(animationSpec = tween(500), initialOffsetX = { it })
+    }
+
+internal val exitTransition: (AnimatedContentTransitionScope<NavBackStackEntry>.() -> ExitTransition?)?
+    get() = {
+        slideOutHorizontally(animationSpec = tween(500), targetOffsetX = { it })
+    }
 
 
 @Preview

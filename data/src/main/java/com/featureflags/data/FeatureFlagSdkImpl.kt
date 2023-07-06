@@ -32,7 +32,7 @@ import kotlinx.coroutines.SupervisorJob
 /**
  * Created by bagadesh on 26/06/23.
  */
-object FeatureFlagSdkImpl : com.featureflags.core.contract.FeatureFlagSdk {
+object FeatureFlagSdkImpl : FeatureFlagSdk {
 
 
     private val gson by lazy { Gson() }
@@ -51,16 +51,16 @@ object FeatureFlagSdkImpl : com.featureflags.core.contract.FeatureFlagSdk {
     private val addFeatureFlagsUseCase by lazy { AddFeatureFlagsUseCase(repository = featureRepository) }
     private val isFeatureEnabledUseCase by lazy { IsFeatureEnabledUseCase(repository = featureRepository) }
     private val getVariableValueUseCase by lazy { GetVariableValueUseCase(repository = featureRepository) }
-    private val _reader: com.featureflags.core.contract.Reader by lazy {
-        com.featureflags.core.contract.impl.ReaderImpl(
+    private val _reader: Reader by lazy {
+        ReaderImpl(
             getFeatureFlagsUseCase = getFeaturesUseCase,
             typeConverterUseCase = typeConverterUseCase,
             isFeatureEnabledUseCase = isFeatureEnabledUseCase,
             getVariableValueUseCase = getVariableValueUseCase
         )
     }
-    private val _writer: com.featureflags.core.contract.Writer by lazy {
-        com.featureflags.core.contract.impl.WriterImpl(
+    private val _writer: Writer by lazy {
+        WriterImpl(
             enableFeatureUseCase = enableFeatureUseCase,
             changeVariableUseCase = changeVariableUseCase
         )
@@ -82,13 +82,14 @@ object FeatureFlagSdkImpl : com.featureflags.core.contract.FeatureFlagSdk {
             resources = context.resources,
             bundleConfigResource = defaultConfigResource,
             addFeatureFlagsUseCase = addFeatureFlagsUseCase,
-            scope = scope
+            scope = scope,
+            cacheDirectory = context.cacheDir.path
         )
         cacheInserter.insertFeatureFlags()
     }
 
 
-    override fun getReader(): com.featureflags.core.contract.Reader = _reader
+    override fun getReader(): Reader = _reader
 
-    override fun getWriter(): com.featureflags.core.contract.Writer = _writer
+    override fun getWriter(): Writer = _writer
 }
